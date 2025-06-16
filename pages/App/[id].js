@@ -37,6 +37,11 @@ const submitComment = async () => {
       ) : (
         <p>Loading...</p>
       )}
+      <h3>Leave a Comment:</h3>
+  <textarea value={comment} onChange={(e) => setComment(e.target.value)} />
+  <br />
+  <button onClick={submitComment}>Submit</button>
+  {response && <p>{response}</p>}
     </div>
   );
 }
