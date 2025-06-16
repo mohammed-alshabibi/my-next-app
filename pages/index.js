@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
+import { useEffect, useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
+  const [msg,setMsg] = useState('');
+
+  useEffect(() =>{
+    fetch('/api/hello').then(res => res.json()).then(data => setMsg(data.message));
+  }, []);
   return (
     <div>
     <h1>Welcome to my App</h1>
