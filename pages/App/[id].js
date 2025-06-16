@@ -14,7 +14,18 @@ export default function PostPage() {
       .then(res => res.json())
       .then(data => setPost(data));
   }, [id]);
+const [comment, setComment] = useState('');
+const [response, setResponse] = useState('');
 
+const submitComment = async () => {
+  const res = await fetch('/api/comment', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text: comment }),
+  });
+  const data = await res.json();
+  setResponse(data.message);
+};
   return (
     <div>
       <h1>Post ID: {id}</h1>
