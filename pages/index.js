@@ -23,8 +23,8 @@ export default function Home() {
     <h1>Welcome to my App</h1>
     <p>Click a post to read: </p>
     <ul>
-      <li><a href="/app/1">Post 1</a></li>
-      <li><a href="/app/2">Post 2</a></li>
+      <li><a href="/App/1">Post 1</a></li>
+      <li><a href="/App/2">Post 2</a></li>
     </ul>
     </div>
   );

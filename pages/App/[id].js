@@ -1,13 +1,13 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-export default function Post(){
-    const router = useRouter();
-    const {id} = router.query;
+export default function PostPage() {
+  const router = useRouter();
+  const { id } = router.query;
 
-    return(
-        <div>
-            <h1>Blog Post #{id}</h1>
-      <p>This is the content of post {id}.</p>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Post ID: {id}</h1>
+      <p>This is a dynamic blog post page.</p>
+    </div>
+  );
 }
